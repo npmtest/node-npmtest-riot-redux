@@ -1,1 +1,39 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-riot-redux",     "homepage": "https://github.com/npmtest/node-npmtest-riot-redux",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-riot-redux.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [riot-redux (v0.3.3)](https://github.com/danny-andrews/riot-redux#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-riot-redux.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-riot-redux) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-riot-redux.svg)](https://travis-ci.org/npmtest/node-npmtest-riot-redux)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-riot-redux",
+    "keywords": [
+        "coverage",
+        "test",
+        "riot-redux"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_riot_redux.js",
+    "name": "npmtest-riot-redux",
+    "nameAlias": "npmtest_riot_redux",
+    "nameOriginal": "npmtest-riot-redux",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-riot-redux.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
